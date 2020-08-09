@@ -45,4 +45,5 @@ CREATE TABLE `users` (
   `created_at` datetime(6) NOT NULL,
   `updated_at` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `users` VALUES (1,'Kevin','Skoglund','someone@nowhere.com','2020-08-09 22:11:58.161210','2020-08-09 22:11:58.161210');
