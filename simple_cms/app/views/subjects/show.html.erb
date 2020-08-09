@@ -1,0 +1,35 @@
+<% content_for(:title) { "Subject: #{@subject.name}" } %>
+
+<%= link_to("<< Back to List", subjects_path, :class => 'back-link') %>
+
+<div class="subjects show">
+  <h2>Show Subject</h2>
+
+  <table summary="Subject detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @subject.name %></td>
+    </tr>
+    <tr>
+      <th>Position</th>
+      <td><%= @subject.position %></td>
+    </tr>
+    <tr>
+      <th>Visible?</th>
+      <td><%= @subject.visible ? 'true' : 'false' %></td>
+    </tr>
+    <tr>
+      <th>Pages</th>
+      <td><%= pluralize(@subject.pages.count, 'page') %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @subject.created_at.to_s(:long) %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @subject.updated_at.strftime("%m/%d/%Y %I:%M %p") %></td>
+    </tr>
+  </table>
+
+</div>

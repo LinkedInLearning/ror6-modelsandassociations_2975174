@@ -1,0 +1,31 @@
+// Place all the styles related to the Demo controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+header {
+  height: 1em;
+  padding: 1em;
+  margin-bottom: 1em;
+  background-image: image-url('gradient.jpg');
+}
+
+div#content {
+  min-height: 400px;
+}
+
+footer {
+  height: 1em;
+  padding: 1em;
+  margin-top: 1em;
+  background-image: image-url('gradient.jpg');
+}
+
+span.status {
+  display: block;
+  width: 10px; height: 10px;
+  margin: 0.25em; padding: 0;
+  border: 1px solid black;
+
+  &.true { background: green; }
+  &.false { background: red; }
+}

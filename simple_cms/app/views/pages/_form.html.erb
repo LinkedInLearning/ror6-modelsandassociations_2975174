@@ -1,0 +1,29 @@
+<%= error_messages_for(f.object) %>
+
+<table summary="Page form fields">
+  <tr>
+    <th>Subject</th>
+    <td><%= f.select(:subject_id, Subject.all.map {|s| [s.name, s.id]}) %></td>
+  </tr>
+  <tr>
+    <th>Name</th>
+    <td><%= f.text_field(:name) %></td>
+  </tr>
+  <tr>
+    <th>Permalink</th>
+    <td><%= f.text_field(:permalink) %></td>
+  </tr>
+  <tr>
+    <th>Position</th>
+    <% count = Page.count + (f.object.new_record? ? 1 : 0) %>
+    <td><%= f.select(:position, 1..count) %></td>
+  </tr>
+  <tr>
+    <th>Visible</th>
+    <td><%= f.check_box(:visible) %></td>
+  </tr>
+  <tr>
+    <th>Content</th>
+    <td><%= f.text_area(:content, :rows => 10, :cols => 60) %></td>
+  </tr>
+</table>
