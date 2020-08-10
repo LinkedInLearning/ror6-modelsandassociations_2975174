@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 
+  scope :sorted, lambda { order(:last_name, :first_name) }
+
   def full_name
     [first_name, last_name].join(' ')
   end
