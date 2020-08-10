@@ -6,5 +6,6 @@ class Subject < ApplicationRecord
   scope :invisible, lambda { where(visible: false) }
   scope :sorted, lambda { order(:position) }
   scope :search, lambda {|kw| where("LOWER(name) LIKE ?", "%#{kw.downcase}%") }
+  # scope :search, -> (kw) { where("LOWER(name) LIKE ?", "%#{kw.downcase}%") }
 
 end
