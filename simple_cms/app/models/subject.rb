@@ -8,7 +8,8 @@ class Subject < ApplicationRecord
   scope :search, lambda {|kw| where("LOWER(name) LIKE ?", "%#{kw.downcase}%") }
   # scope :search, -> (kw) { where("LOWER(name) LIKE ?", "%#{kw.downcase}%") }
 
-  validates_presence_of :name
-  validates_length_of :name, :maximum => 50
+  # validates_presence_of :name
+  # validates_length_of :name, :maximum => 50
+  validates :name, :presence => true, :length => {:maximum => 50}
 
 end
