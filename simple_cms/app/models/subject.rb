@@ -12,4 +12,7 @@ class Subject < ApplicationRecord
   # validates_length_of :name, :maximum => 50
   validates :name, :presence => true, :length => {:maximum => 50}
 
+  validates_presence_of :position
+  validates_numericality_of :position, :greater_than => 0
+
 end
