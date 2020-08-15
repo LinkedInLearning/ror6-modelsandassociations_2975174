@@ -17,4 +17,12 @@ class Page < ApplicationRecord
     :uniqueness => true,
     :format => { :with => /\A\w+\Z/ }
 
+  before_validation :titleize_name
+
+  private
+
+    def titleize_name
+      self.name = name.titleize
+    end
+
 end
