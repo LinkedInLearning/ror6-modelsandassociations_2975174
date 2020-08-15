@@ -16,8 +16,9 @@ class Subject < ApplicationRecord
   validates_numericality_of :position, :greater_than => 0
 
   after_create :log_create
-  after_update :log_update
+  after_update :log_update, if: Proc.new {|s| s.position == 1}
   after_save :log_save
+  after_commit :cleaning_reminder, :if => :too_many_records?
 
 
   private
@@ -32,6 +33,14 @@ class Subject < ApplicationRecord
 
     def log_save
       logger.info("Subject ID #{id} was saved")
+    end
+
+    def cleaning_reminder
+      logger.info("Remember to prune old subjects")
+    end
+
+    def too_many_records?
+      Subject.count > 4
     end
 
 end
