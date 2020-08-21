@@ -1,7 +1,8 @@
 class Page < ApplicationRecord
 
   belongs_to :subject
-
+  has_many :page_assignments
+  
   scope :visible, lambda { where(visible: true) }
   scope :invisible, lambda { where(visible: false) }
   scope :sorted, lambda { order(:position) }
