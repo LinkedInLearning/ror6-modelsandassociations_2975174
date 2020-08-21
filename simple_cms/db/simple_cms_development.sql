@@ -1,3 +1,24 @@
+DROP TABLE IF EXISTS `departments`;
+CREATE TABLE `departments` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `created_at` datetime(6) NOT NULL,
+  `updated_at` datetime(6) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `departments` VALUES (1,'Information Technology','2020-08-21 19:04:27.128166','2020-08-21 19:04:27.128166'),(2,'Accounting','2020-08-21 19:04:33.855555','2020-08-21 19:04:33.855555'),(3,'Human Resources','2020-08-21 19:04:40.087660','2020-08-21 19:04:40.087660');
+
+DROP TABLE IF EXISTS `departments_users`;
+CREATE TABLE `departments_users` (
+  `department_id` bigint(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  KEY `index_departments_users_on_department_id_and_user_id` (`department_id`,`user_id`),
+  KEY `index_departments_users_on_user_id_and_department_id` (`user_id`,`department_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `departments_users` VALUES (2,1),(3,1);
+
 DROP TABLE IF EXISTS `pages`;
 CREATE TABLE `pages` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -20,8 +41,9 @@ CREATE TABLE `schema_migrations` (
   `version` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-INSERT INTO `schema_migrations` VALUES ('20200128181810'),('20200128182204'),('20200128193438'),('20200128193447');
+INSERT INTO `schema_migrations` VALUES ('20200128181810'),('20200128182204'),('20200128193438'),('20200128193447'),('20200821190107'),('20200821190212');
 
 DROP TABLE IF EXISTS `subjects`;
 CREATE TABLE `subjects` (

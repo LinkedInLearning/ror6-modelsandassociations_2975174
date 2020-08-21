@@ -13,4 +13,11 @@
     <th>Email</th>
     <td><%= f.text_field(:email) %></td>
   </tr>
+  <tr>
+    <th>Departments</th>
+  	<td>
+  		<% collection = Department.all %>
+  		<%= f.collection_check_boxes(:department_ids, collection, :id, :name) %>
+  	</td>
+  </tr>
 </table>
