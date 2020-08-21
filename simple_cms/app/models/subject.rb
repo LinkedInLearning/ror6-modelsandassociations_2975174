@@ -1,6 +1,6 @@
 class Subject < ApplicationRecord
 
-  has_many :pages
+  has_many :pages, :dependent => :destroy
 
   scope :visible, lambda { where(visible: true) }
   scope :invisible, lambda { where(visible: false) }
