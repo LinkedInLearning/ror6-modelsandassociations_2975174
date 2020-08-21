@@ -1,0 +1,16 @@
+<%= error_messages_for(f.object) %>
+
+<table summary="User form fields">
+  <tr>
+    <th>First Name</th>
+    <td><%= f.text_field(:first_name) %></td>
+  </tr>
+  <tr>
+    <th>Last Name</th>
+    <td><%= f.text_field(:last_name) %></td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td><%= f.text_field(:email) %></td>
+  </tr>
+</table>

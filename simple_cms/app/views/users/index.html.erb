@@ -1,0 +1,26 @@
+<% content_for(:title) { "Users" } %>
+
+<div class="users index">
+  <h2>Users</h2>
+
+  <%= link_to("Add New User", new_user_path, :class => 'action new') %>
+
+  <table class="listing" summary="User list">
+    <tr class="header">
+      <th>Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.full_name %></td>
+      <td><%= user.email %></td>
+      <td class="actions">
+        <%= link_to("Show", user_path(user), :class => 'action show') %>
+        <%= link_to("Edit", edit_user_path(user), :class => 'action edit') %>
+        <%= link_to("Delete", delete_user_path(user), :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

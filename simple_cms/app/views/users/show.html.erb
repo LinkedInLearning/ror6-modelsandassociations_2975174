@@ -1,0 +1,31 @@
+<% content_for(:title) { "User: #{@user.full_name}" } %>
+
+<%= link_to("<< Back to List", users_path, :class => 'back-link') %>
+
+<div class="users show">
+  <h2>Show User</h2>
+
+  <table summary="User detail view">
+    <tr>
+      <th>First Name</th>
+      <td><%= @user.first_name %></td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td><%= @user.last_name %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @user.created_at.to_s(:long) %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @user.updated_at.to_s(:long) %></td>
+    </tr>
+  </table>
+
+</div>
