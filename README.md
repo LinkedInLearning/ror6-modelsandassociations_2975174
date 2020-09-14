@@ -3,7 +3,8 @@ This is the repository for the LinkedIn Learning course Ruby on Rails 6 Models a
 
 [![COURSENAME](COURSEIMAGE)](LICOURSEURL)
 
-[COURSEDESCRIPTION]
+COURSE DESCRIPTION
+Ruby on Rails can speed up and improve your development of full-featured web applications because it provides powerful tools that give structure and automate common data tasks. In this course, learn about the built-in features of models and associations in Rails. Apply named scopes, validations, callbacks, and associations to a sample project. Find out how to build smarter models by adding attributes not in the database and leveraging efficient queries. Walk through the use of available validation methods and helpers. Learn how to implement custom validations and to write and add automatic actions, known as callbacks. Explore effective use of Active Record associations, investigate belongs-to-many relationships and rich associations, and learn how to write queries that span several tables. 
 
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
